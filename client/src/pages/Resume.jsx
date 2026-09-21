@@ -2,7 +2,7 @@ import useFetch from "../hooks/useFetch";
 import usePageTitle from "../hooks/usePageTitle";
 
 export default function Resume() {
-  usePageTitle("Resume");
+  usePageTitle("Resume"); 
   console.log(useFetch("/resume"));
   const { data: resume, error, loading } = useFetch("/resume");
 
