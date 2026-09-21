@@ -5,7 +5,7 @@ import rateLimit from "express-rate-limit";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { projects, services } from "./data.js";
+import { projects, services, portfolio, resume } from "./data.js";
 
 dotenv.config();
 
@@ -34,6 +34,8 @@ app.get("/api/status", (req, res) => {
 
 app.get("/api/projects", (req, res) => res.json(projects));
 app.get("/api/services", (req, res) => res.json(services));
+app.get("/api/portfolio", (req, res) => res.json(portfolio));
+app.get("/api/resume", (req, res) => res.json(resume));
 
 const contactLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
